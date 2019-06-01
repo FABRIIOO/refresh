@@ -574,9 +574,11 @@
 
 						var dt_g;
 						$( document ).ready ( function () {
+							alert("teste 1");
 							$.ajax({
 								url : "http://www.usc.edu.br/api/v1/guia_turistico",
 								type : 'get',
+								 crossDomain: true,
 								beforeSend : function(){
 									console.log("enviando requisição...");
 								}
