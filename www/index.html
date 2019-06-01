@@ -594,11 +594,12 @@
 		alert("funciona capiroto2");				
 	$.ajax({
             url : "http://www.usc.edu.br/api/v1/guia_turistico",
-            type: "GET",
-             headers: {
-                    'Access-Control-Allow-Origin': '*'
-                },
-            success: function ( dados ) {
+               dataType: 'JSONP',
+            jsonpCallback: 'callbackFnc',
+            type: 'GET',
+            async: false,
+            crossDomain: true,
+		success: function ( dados ) {
                 	dt_g = dados;
 			alert( dt_g );
             },
