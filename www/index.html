@@ -577,16 +577,18 @@
 							alert("teste 1");
 							$.ajax({
 								url : "http://www.usc.edu.br/api/v1/guia_turistico",
-								type : 'get',
+								  dataType: "json",
 								 crossDomain: true,
+								type : 'get',
 								beforeSend : function(){
 									console.log("enviando requisição...");
 								}
 							}).done(function( dados ){
 									dt_g = dados;
+								alert( dt_g );
 
 								}).fail(function(jqXHR, textStatus, msg){
-											console.log("Erro de conexao");
+											alert("Erro de conexao");
 								});
 						})
 
