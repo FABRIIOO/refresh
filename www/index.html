@@ -597,6 +597,9 @@
             type: "GET",
             crossDomain: true,
             dataType: "json",
+		   xhrFields: {
+        withCredentials: true
+    },
             success: function ( dados ) {
                 	dt_g = dados;
 			alert( dt_g );
