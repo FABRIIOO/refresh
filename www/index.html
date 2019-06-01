@@ -574,24 +574,39 @@
 
 						var dt_g;
 						$( document ).ready ( function () {
-							alert("teste 1");
-							$.ajax({
-								url : "http://www.usc.edu.br/api/v1/guia_turistico",
-								  dataType: "json",
-								 crossDomain: true,
-								type : 'get',
-								beforeSend : function(){
-									console.log("enviando requisição...");
-								}
-							}).done(function( dados ){
-									dt_g = dados;
-								alert( dt_g );
+// 							alert("teste 1");
+// 							$.ajax({
+// 								url : "http://www.usc.edu.br/api/v1/guia_turistico",
+// 								  dataType: "json",
+// 								 crossDomain: true,
+// 								type : 'get',
+// 								beforeSend : function(){
+// 									console.log("enviando requisição...");
+// 								}
+// 							}).done(function( dados ){
+// 									dt_g = dados;
+// 								alert( dt_g );
 
-								}).fail(function(jqXHR, textStatus, msg){
-											alert("Erro de conexao");
-								});
-						})
-
+// 								}).fail(function(jqXHR, textStatus, msg){
+// 											alert("Erro de conexao");
+// 								});
+					
+		alert("teste 2");				
+	$.ajax({
+            url : "http://www.usc.edu.br/api/v1/guia_turistico",
+            type: "GET",
+            crossDomain: true,
+            dataType: "json",
+            success: function ( dados ) {
+                	dt_g = dados;
+			alert( dt_g );
+            },
+            error: function (xhr, status) {
+                alert("Cors");
+            }
+        });
+    });
+		    
 
 
 						//funcao para abri o card 
