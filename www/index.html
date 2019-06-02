@@ -1,6 +1,7 @@
 <!DOCTYPE html>
     <html>
         <head>
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 					<meta charset="UTF-8" />
             	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -574,39 +575,23 @@
 
 						var dt_g;
 						$( document ).ready ( function () {
-// 							alert("teste 1");
-// 							$.ajax({
-// 								url : "http://www.usc.edu.br/api/v1/guia_turistico",
-// 								  dataType: "json",
-// 								 crossDomain: true,
-// 								type : 'get',
-// 								beforeSend : function(){
-// 									console.log("enviando requisição...");
-// 								}
-// 							}).done(function( dados ){
-// 									dt_g = dados;
-// 								alert( dt_g );
+							alert("teste 1");
+							$.ajax({
+								url : "http://www.usc.edu.br/api/v1/guia_turistico",
+								  dataType: "json",
+								type : 'get',
+								beforeSend : function(){
+									console.log("enviando requisição...");
+								}
+							}).done(function( dados ){
+									dt_g = dados;
+								alert( dt_g );
 
-// 								}).fail(function(jqXHR, textStatus, msg){
-// 											alert("Erro de conexao");
-// 								});
+								}).fail(function(jqXHR, textStatus, msg){
+											alert("Erro de conexao");
+								});
 					
-		alert("teste 11");				
-	$.ajax({
-            url : "http://www.usc.edu.br/api/v1/guia_turistico",
-               dataType: 'JSONP',
-            jsonpCallback: 'callbackFnc',
-            type: 'GET',
-            async: false,
-            crossDomain: true,
-		success: function ( dados ) {
-                	dt_g = dados;
-			alert( dt_g );
-            },
-            error: function (xhr, status) {
-                alert("Cors");
-            }
-        });
+	
     });
 		    
 
